@@ -35,13 +35,42 @@ const sections = [
   { id: "pitch", title: "Pitch Deck", icon: <Presentation className="w-4 h-4" /> },
 ];
 
+/* ─── Google Doc Links ─── */
+const DOC_LINKS = {
+  research: "https://docs.google.com/document/d/1l_jMWPMVHQ0VnpgnoRKFiqHyaS-ys3QVyN45pSyKX3A/edit",
+  enrichment: "https://docs.google.com/document/d/1rTco9UOIeJFFUv5unay9mztphNhQU3SrTHCf2AofgPY/edit",
+  gtm: "https://docs.google.com/document/d/1fDZa_49UeSmptrdHK5L1uTiBuwagzJxebQtdVTiwNh8/edit",
+  marketing: "https://docs.google.com/document/d/19RwEHYe4Eum0pSplP0vRRJ419_5pZaK4lFy6LzCaTqU/edit",
+  brand: "https://docs.google.com/document/d/16DPOVFm2Gb7nWwjEE6-2aSMS9PyJzaZKJLuLi-UjL7M/edit",
+  pitchDeck: "https://docs.google.com/document/d/1u7ML2-APtqFI4jX4iG2LJ8xlUIvaAhfp9M01TX0J4cU/edit",
+};
+
+function DocLink({ href, label }: { href: string; label: string }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-1.5 bg-[#1a1a1a] border border-[#2a2a2a] hover:border-[#f59e0b]/30 text-[#a3a3a3] hover:text-[#f59e0b] text-xs font-mono px-3 py-1.5 rounded-md transition"
+    >
+      <ExternalLink className="w-3 h-3" /> {label}
+    </a>
+  );
+}
+
 /* ─── Research Section ─── */
 function ResearchSection() {
   return (
     <div className="space-y-10">
       {/* Executive Summary */}
       <div>
-        <h2 className="text-2xl font-bold text-white mb-2">Research Brief — Nullify AI</h2>
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
+          <h2 className="text-2xl font-bold text-white">Research Brief — Nullify AI</h2>
+          <div className="flex gap-2">
+            <DocLink href={DOC_LINKS.research} label="Research Doc" />
+            <DocLink href={DOC_LINKS.enrichment} label="Enrichment Doc" />
+          </div>
+        </div>
         <p className="text-sm text-[#737373] mb-6">AI Decision Monitoring for Regulated Industries · March 2026</p>
 
         <div className="bg-[#f59e0b]/5 border border-[#f59e0b]/20 rounded-lg p-5 mb-8">
@@ -184,7 +213,10 @@ function GtmSection() {
   return (
     <div className="space-y-10">
       <div>
-        <h2 className="text-2xl font-bold text-white mb-2">GTM Plan — RuleVault</h2>
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
+          <h2 className="text-2xl font-bold text-white">GTM Plan — RuleVault</h2>
+          <DocLink href={DOC_LINKS.gtm} label="View in Google Docs" />
+        </div>
         <p className="text-sm text-[#737373] mb-6">Go-to-Market Strategy · March 2026</p>
 
         <div className="bg-[#f59e0b]/5 border border-[#f59e0b]/20 rounded-lg p-5 mb-8">
@@ -309,7 +341,10 @@ function MarketingSection() {
   return (
     <div className="space-y-10">
       <div>
-        <h2 className="text-2xl font-bold text-white mb-2">Marketing Plan — RuleVault</h2>
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
+          <h2 className="text-2xl font-bold text-white">Marketing Plan — RuleVault</h2>
+          <DocLink href={DOC_LINKS.marketing} label="View in Google Docs" />
+        </div>
         <p className="text-sm text-[#737373] mb-6">7 Growth Motions Analysis · March 2026</p>
       </div>
 
@@ -455,7 +490,10 @@ function BrandSection() {
   return (
     <div className="space-y-10">
       <div>
-        <h2 className="text-2xl font-bold text-white mb-2">Brand & Design Spec — RuleVault</h2>
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
+          <h2 className="text-2xl font-bold text-white">Brand & Design Spec — RuleVault</h2>
+          <DocLink href={DOC_LINKS.brand} label="View in Google Docs" />
+        </div>
         <p className="text-sm text-[#737373] mb-6">Industrial / Utilitarian — Bloomberg Terminal Density</p>
       </div>
 
@@ -595,7 +633,10 @@ function PitchSection() {
   return (
     <div className="space-y-10">
       <div>
-        <h2 className="text-2xl font-bold text-white mb-2">Pitch Deck — RuleVault</h2>
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
+          <h2 className="text-2xl font-bold text-white">Pitch Deck — RuleVault</h2>
+          <DocLink href={DOC_LINKS.pitchDeck} label="Content Doc" />
+        </div>
         <p className="text-sm text-[#737373] mb-4">10 slides · Arrow key navigation · Framer Motion transitions</p>
         <a
           href="/deck"
