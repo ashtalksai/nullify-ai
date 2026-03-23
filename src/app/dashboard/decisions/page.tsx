@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { generateDecisions } from "@/lib/seed-data";
 import { Download, ChevronLeft, ChevronRight, Copy, Shield } from "lucide-react";
@@ -107,9 +107,8 @@ export default function DecisionsPage() {
             </thead>
             <tbody>
               {paged.map((d) => (
-                <>
+                <React.Fragment key={d.id}>
                   <tr
-                    key={d.id}
                     onClick={() =>
                       setExpandedId(expandedId === d.id ? null : d.id)
                     }
@@ -220,7 +219,7 @@ export default function DecisionsPage() {
                       </td>
                     </tr>
                   )}
-                </>
+                </React.Fragment>
               ))}
             </tbody>
           </table>

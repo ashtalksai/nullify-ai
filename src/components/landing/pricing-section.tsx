@@ -9,7 +9,7 @@ import { Check, X } from "lucide-react";
 const plans = [
   {
     name: "Free",
-    subtitle: "/bin/zsh/month",
+    subtitle: "Free forever",
     monthlyPrice: "$0",
     yearlyPrice: "$0",
     features: [
